@@ -355,12 +355,12 @@
 		}
 		document.documentElement.style.fontSize = 100 / 750 * deviceWidth + 'px';
 	</script>
-	<script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.js
-"></script>
+	<script src="js/zepto.min.js"></script>
 	<script>
 		$("#nav_menu").tap(function(){
 			alert(111);
-		});
+			$(this).css('color', '#ff0');
+		})
 	</script>
 </head>
 <body>
