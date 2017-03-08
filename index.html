@@ -309,14 +309,26 @@
 		.copyright {
 			font-size: 0.24rem;
 		}
-		.aside {
+		.overlay {
 			position: absolute;
-			left: -5.8rem;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0,0,0,0.2);
+			z-index: 998;
+		}
+		.menu {
+			position: absolute;
+			left: 0;
 			top: 0;
 			width: 5.8rem;
+			height: 100%;
 			overflow: hidden;
 			background-color: #999;
-			transition: left 0.6s;
+			z-index: 999;
+			transform: translate3d(-100%, 0, 0);
+			transition: transform 0.6s;
 		}
 		.menu_list {
 			font-size: 0.32rem;
@@ -348,6 +360,10 @@
 		.submenu li:last-child .submenu_item {
 			margin-bottom: 0;
 		}
+		.overlay {
+			display: none;
+			background-color: rgba(0,0,0,0.2);
+		}
 	</style>
 	<script>
 		var deviceWidth = document.documentElement.clientWidth;
@@ -360,7 +376,8 @@
 	<script>
 		window.onload = function(){
 			$("#nav_menu").tap(function(){
-				$("#menu").css('left', '0');
+				$("#menu").css("transform", "translate3d(0, 0, 0)");
+				$(".overlay").eq(0).css({"opacity": "1", "display": "block"});
 			});
 			$(".menu_item").each(function(index, el) {
 				$(this).tap(function(){
@@ -376,6 +393,11 @@
 					}
 				})
 			});
+
+			$(".overlay").eq(0).tap(function(){
+				$(this).css({ "display": "none"});
+				$("#menu").css("transform", "translate3d(-100%, 0, 0)");
+			})
 		}
 	</script>
 </head>
@@ -527,55 +549,58 @@
 			<p>All rights reserved.</p>
 		</div>
 	</footer>
-	<div class="aside menu" id="menu">
-		<ul class="menu_list">
-			<li>
-				<a href="##" class="menu_item">
-					<span class="menu_icon"><i class="fa fa-user-o"></i></span>
-					<span class="menu_title username">Jia Yan An</span>
-					<span class="menu_link"><i class="fa fa-chevron-up"></i></span>
-				</a>
-				<ul class="submenu">
-					<li><a href="##" class="submenu_item">My Order</a></li>
-					<li><a href="##" class="submenu_item">My Review</a></li>
-					<li><a href="##" class="submenu_item">Sign Out</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="##" class="menu_item">
-					<span class="menu_icon"><i class="fa fa-home"></i></span>
-					<span class="menu_title index">Home</span>
-					<span class="menu_link"><i class="fa fa-chevron-down"></i></span>
-				</a>
-			</li>
-			<li>
-				<a href="##" class="menu_item">
-					<span class="menu_icon"><i class="fa fa-th-large"></i></span>
-					<span class="menu_title username">All Categories</span>
-					<span class="menu_link"><i class="fa fa-chevron-up"></i></span>
-				</a>
-				<ul class="submenu">
-					<li><a href="##" class="submenu_item">Home</a></li>
-					<li><a href="##" class="submenu_item">Furniture</a></li>
-					<li><a href="##" class="submenu_item">Outdoor</a></li>
-					<li><a href="##" class="submenu_item">Hardware</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="##" class="menu_item">
-					<span class="menu_icon"><i class="fa fa-heart-o"></i></span>
-					<span class="menu_title">My Wishlist</span>
-					<span class="menu_link"><i class="fa fa-chevron-down"></i></span>
-				</a>
-			</li>
-			<li>
-				<a href="##" class="menu_item">
-					<span class="menu_icon"><i class="fa fa-phone-square"></i></span>
-					<span class="menu_title">Contact</span>
-					<span class="menu_link"><i class="fa fa-chevron-down"></i></span>
-				</a>
-			</li>
-		</ul>
+	<div class="aside">
+		<div class="menu" id="menu">
+			<ul class="menu_list">
+				<li>
+					<a href="##" class="menu_item">
+						<span class="menu_icon"><i class="fa fa-user-o"></i></span>
+						<span class="menu_title username">Jia Yan An</span>
+						<span class="menu_link"><i class="fa fa-chevron-up"></i></span>
+					</a>
+					<ul class="submenu">
+						<li><a href="##" class="submenu_item">My Order</a></li>
+						<li><a href="##" class="submenu_item">My Review</a></li>
+						<li><a href="##" class="submenu_item">Sign Out</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="##" class="menu_item">
+						<span class="menu_icon"><i class="fa fa-home"></i></span>
+						<span class="menu_title index">Home</span>
+						<span class="menu_link"><i class="fa fa-chevron-down"></i></span>
+					</a>
+				</li>
+				<li>
+					<a href="##" class="menu_item">
+						<span class="menu_icon"><i class="fa fa-th-large"></i></span>
+						<span class="menu_title username">All Categories</span>
+						<span class="menu_link"><i class="fa fa-chevron-up"></i></span>
+					</a>
+					<ul class="submenu">
+						<li><a href="##" class="submenu_item">Home</a></li>
+						<li><a href="##" class="submenu_item">Furniture</a></li>
+						<li><a href="##" class="submenu_item">Outdoor</a></li>
+						<li><a href="##" class="submenu_item">Hardware</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="##" class="menu_item">
+						<span class="menu_icon"><i class="fa fa-heart-o"></i></span>
+						<span class="menu_title">My Wishlist</span>
+						<span class="menu_link"><i class="fa fa-chevron-down"></i></span>
+					</a>
+				</li>
+				<li>
+					<a href="##" class="menu_item">
+						<span class="menu_icon"><i class="fa fa-phone-square"></i></span>
+						<span class="menu_title">Contact</span>
+						<span class="menu_link"><i class="fa fa-chevron-down"></i></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="overlay"></div>
 	</div>
 </body>
 </html>
