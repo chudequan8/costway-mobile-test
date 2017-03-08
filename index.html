@@ -311,11 +311,12 @@
 		}
 		.aside {
 			position: absolute;
-			left: 0;
+			left: -5.8rem;
 			top: 0;
-			width: 0;
+			width: 5.8rem;
 			overflow: hidden;
 			background-color: #999;
+			transition: left 0.6s;
 		}
 		.menu_list {
 			font-size: 0.32rem;
@@ -359,8 +360,21 @@
 	<script>
 		window.onload = function(){
 			$("#nav_menu").tap(function(){
-				alert(111);
-				$(this).css('color', '#ff0');
+				$("#menu").css('left', '0');
+			});
+			$(".menu_item").each(function(index, el) {
+				$(this).tap(function(){
+
+					$(this).siblings("ul").toggle();
+					// toggleClass
+					var icon = $(this).find('.fa').eq(1);
+					if(icon.hasClass('fa-chevron-up')){
+						icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
+					}
+					else {
+						icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+					}
+				})
 			});
 		}
 	</script>
@@ -513,7 +527,7 @@
 			<p>All rights reserved.</p>
 		</div>
 	</footer>
-	<div class="aside menu">
+	<div class="aside menu" id="menu">
 		<ul class="menu_list">
 			<li>
 				<a href="##" class="menu_item">
