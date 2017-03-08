@@ -357,10 +357,12 @@
 	</script>
 	<script src="js/zepto.min.js"></script>
 	<script>
-		$("#nav_menu").tap(function(){
-			alert(111);
-			$(this).css('color', '#ff0');
-		})
+		window.onload = function(){
+			$("#nav_menu").tap(function(){
+				alert(111);
+				$(this).css('color', '#ff0');
+			});
+		}
 	</script>
 </head>
 <body>
