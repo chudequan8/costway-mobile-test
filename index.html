@@ -6,365 +6,7 @@
 	<title>home page</title>
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="css/normalize.css">
-	<style>
-		html {
-			font-size: 100px;	/*1rem = 100px*/
-			min-height: 100%;
-		}
-		body {
-			line-height: 1.5;
-			color: #343434;
-			background-color: #999;
-		}
-		input {
-			box-sizing: border-box;
-			outline: none;
-			padding: 0;
-			color: #343434;
-		}
-		ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-		p {
-			margin: 0;
-		}
-		.fa {
-			color: #7b7b7b;
-		}
-		a {
-			text-decoration: none;
-		}
-		.btn {
-			border: none;
-			outline: none;
-			padding: 0;
-			cursor: pointer;
-		}
-
-		.topbar {
-			display: flex;
-			box-sizing: border-box;
-			width: 100%;
-			height: 0.84rem;
-			padding: 0 0.24rem;
-			align-items: center;
-			justify-content: space-between;
-			font-size: 0.44rem;
-			line-height: 0.44rem;
-			background-color: #fff;
-			border-bottom: 1px solid #ccc;
-		}
-
-		.logo img {
-			height: 0.44rem;
-			vertical-align: bottom;
-		}
-		.nav_menu, .shopping_cart {
-			display: block;
-			width: 0.46rem;
-			height: 0.44rem;
-			text-align: center;
-		}
-		.search_box, .sign_up_box {
-			position: relative;
-			display: flex;
-			width: 90%;
-			height: 0.66rem;
-			margin: 0.18rem auto;
-			padding: 0 0.2rem;
-			border: 1px solid #ccc;
-			border-radius: 0.04rem;
-			background-color: #fff;
-		}
-		.search_input {
-			padding-right: 0.46rem;
-		}
-		.search_input, .sign_up_input {
-			display: inline-block;
-			border: none;
-			width: 100%;
-			font-size: 0.24rem;
-			line-height: 1.5;
-		}
-		.search_icon {
-			position: absolute;
-			right: 0.2rem;
-			top: 0.11rem;
-			display: block;
-			width: 0.46rem;
-			height: 0.44rem;
-			font-size: 0.44rem;
-			line-height: 0.44rem;
-			text-align: right;
-			cursor: pointer;
-		}
-		
-		.slider {
-			position: relative;
-			margin-bottom: 0.18rem;
-		}
-		.slider ul {
-			overflow: hidden;
-		}
-		.slider_item {
-			font-size: 0;
-		}
-		.slider_item img {
-			width: 100%;
-			height: 3.04rem;
-			vertical-align: bottom;
-		}
-		.slider_controller {
-			position: absolute;
-			bottom: 0.1rem;
-			width: 100%;
-			height: 0.14rem;
-			text-align: center;
-		}
-		.slider_dot {
-			display: inline-block;
-			vertical-align: top;
-			width: 0.14rem;
-			height: 0.14rem;
-			border-radius: 50%;
-			background-color: #fff;
-		}
-		.slider_dot.on {
-			background-color: #c82a2e;
-		}
-
-		nav, .recommend {
-			width: 100%;
-			margin-bottom: 0.18rem;
-		}
-		.nav_header, .recommend_header {
-			position: relative;
-			padding: 0.26rem 0.18rem;
-			background-color: #fff;
-		}
-		.nav_title, .recommend_title {
-			position: relative;
-			font-size: 0.32rem;
-			padding-left: 0.6rem;
-		}
-		.categories_icon, .pop_icon {
-			position: absolute;
-			left: 0;
-			width: 0.48rem;
-			height: 0.48rem;
-		}
-		.categories_icon {
-			background: url(images/categories-icon.png) no-repeat center;
-			background-size: 100% 100%;
-		}
-		.pop_icon {
-			background: url(images/pop-icon.png) no-repeat center;
-			background-size: 99% 99%;
-		}
-		.more_categories {
-			position: absolute;
-			top: 0.02rem;
-			right: 0.16rem;
-			display: block;
-			box-sizing: border-box;
-			width: 0.44rem;
-			height: 0.44rem;
-			border: 0.03rem solid #7b7b7b;
-			border-radius: 50%;
-			text-align: center;
-			font-size: 0.24rem;
-		}
-		.more_categories .fa {
-			font-weight: bold;
-		}
-		.nav_content {
-			padding-top: 0.02rem;
-		}
-		.categories_list {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			margin-bottom: 0.18rem;
-		}
-		.categories_list .normal {
-			width: 1.86rem;
-			height: 1.40rem;
-		}
-		.categories_list .pop {
-			width: 2.38rem;
-			height: 2.94rem;
-		}
-		.categories_item img {
-			width: 100%;
-			height: 100%;
-			display: block;
-		}
-
-
-		.recommend_header {
-			margin-bottom: 0.18rem;
-		}
-		.recommend_content {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
-		.content_list {
-			width: 3.65rem;
-			background-color: #fff;
-		}
-		.content_list img {
-			width: 100%;
-			height: 100%;
-			display: block;
-		}
-		.product_info {
-			font-size: 0.24rem;
-			padding: 0 0.18rem;
-		}
-
-		.product_name {
-			color: #343434;
-		}
-		.price {
-			line-height: 0.5rem;
-		}
-		.price .now_price {
-			color: #c82a2e;
-		}
-		.price .old_price {
-			color: #7b7b7b;
-			text-decoration: line-through;
-		}
-		.sign_up_input {
-			padding-right: 1.86rem;
-		}
-		.sign_up_box {
-			margin-bottom: 0.3rem;
-		}
-		.sign_up_box .submit {
-			position: absolute;
-			right: 0;
-			width: 1.86rem;
-			height: 100%;
-			background-color: #c82a2e;
-			color: #fff;
-			display: inline-block;
-			font-size: 0.24rem;
-			border-bottom-right-radius: 0.04rem;
-			border-top-right-radius: 0.04rem;
-		}
-		footer {
-			color: #7d7d7d;
-			text-align: center;
-			font-size: 0.28rem;
-			padding-bottom: 0.18rem;
-		}
-
-		.share {
-			margin: 0 auto;
-			margin-bottom: 0.18rem;
-			display: flex;
-			justify-content: space-between;
-			width: 2.9rem;
-			height: 0.44rem;
-		}
-		.share_link {
-			display: block;
-			box-sizing: border-box;
-			width: 0.44rem;
-			height: 0.44rem;
-			line-height: 0.4rem;
-			border: 0.02rem solid #343434;
-			border-radius: 50%;
-		}
-		.share .fa {
-			color: #343434;
-		}
-		.options {
-			margin-bottom: 0.18rem;
-		}
-		.options a {
-			color: #7b7b7b;
-		}
-		.payway {
-			display: flex;
-			justify-content: space-between;
-			margin: 0 auto;
-			margin-bottom: 0.18rem;
-			width: 5rem;
-		}
-		.payway a {
-			display: block;
-			width: 0.88rem;
-			height: 0.5rem;
-		}
-		.payway img {
-			display: block;	
-			width: 100%;
-			height: 100%;	
-		}
-		.copyright {
-			font-size: 0.24rem;
-		}
-		.overlay {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background-color: rgba(0,0,0,0.2);
-			z-index: 998;
-		}
-		.menu {
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 5.8rem;
-			height: 100%;
-			overflow: hidden;
-			background-color: #999;
-			z-index: 999;
-			transform: translate3d(-100%, 0, 0);
-			transition: transform 0.6s;
-		}
-		.menu_list {
-			font-size: 0.32rem;
-		}
-		.menu_item, .submenu_item {
-			display: block;
-			height: 0.88rem;
-			line-height: 0.88rem;
-		}
-		.menu_icon {
-			margin: 0 0.36rem;
-		}
-		.menu_icon .fa {
-			color: #c82a2e;
-		}
-		.menu_title {
-			color: #343434;
-		}
-		.menu_link {
-			position: absolute;
-			right: 0.36rem;
-		}
-		.submenu_item {
-			color: #343434;
-			background-color: #fff;
-			margin-bottom: 0.02rem;
-			padding-left: 0.36rem;
-		}
-		.submenu li:last-child .submenu_item {
-			margin-bottom: 0;
-		}
-		.overlay {
-			display: none;
-			background-color: rgba(0,0,0,0.2);
-		}
-	</style>
+	<link rel="stylesheet" href="css/main.css">
 	<script>
 		var deviceWidth = document.documentElement.clientWidth;
 		if(deviceWidth > 750){
@@ -372,34 +14,9 @@
 		}
 		document.documentElement.style.fontSize = 100 / 750 * deviceWidth + 'px';
 	</script>
-	<script src="js/zepto.min.js"></script>
-	<script>
-		window.onload = function(){
-			$("#nav_menu").tap(function(){
-				$("#menu").css("transform", "translate3d(0, 0, 0)");
-				$(".overlay").eq(0).css({"opacity": "1", "display": "block"});
-			});
-			$(".menu_item").each(function(index, el) {
-				$(this).tap(function(){
-
-					$(this).siblings("ul").toggle();
-					// toggleClass
-					var icon = $(this).find('.fa').eq(1);
-					if(icon.hasClass('fa-chevron-up')){
-						icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
-					}
-					else {
-						icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-					}
-				})
-			});
-
-			$(".overlay").eq(0).tap(function(){
-				$(this).css({ "display": "none"});
-				$("#menu").css("transform", "translate3d(-100%, 0, 0)");
-			})
-		}
-	</script>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+	<script src="js/jquery.mobile-events.js"></script>
+	<script src='js/swipe.js'></script>
 </head>
 <body>
 	<header class="topbar">
@@ -410,13 +27,17 @@
 	<div class="container">
 		<form>
 			<div class="search_box">
-				<input type="text" class="search_input" placeholder="Search Costway">
+				<input type="text" class="search_input" placeholder="Search Costway" data-role="none">
 				<span class="search_icon"><i class="fa fa-search"></i></span>
 			</div>
 		</form>
 		<div class="slider">
 			<ul>
-				<li class="slider_item"><a href="##"><img src="images/banner01.jpg" alt=""></a></li>
+				<li class="slider_item" style="transform: translate3d(0, 0, 0)"><a href="##"><img src="images/banner01.jpg" alt=""></a></li>
+				<li class="slider_item" style="transform: translate3d(7.5rem, 0, 0)"><a href="##"><img src="images/banner02.jpg" alt=""></a></li>
+				<li class="slider_item" style="transform: translate3d(15rem, 0, 0)"><a href="##"><img src="images/banner03.jpg" alt=""></a></li>
+				<li class="slider_item" style="transform: translate3d(22.5rem, 0, 0)"><a href="##"><img src="images/banner04.jpg" alt=""></a></li>
+				<li class="slider_item" style="transform: translate3d(30rem, 0, 0)"><a href="##"><img src="images/banner05.jpg" alt=""></a></li>
 			</ul>
 			<div class="slider_controller">
 				<span class="slider_dot on"></span>
@@ -520,8 +141,8 @@
 	<footer>
 		<form>
 			<div class="sign_up_box">
-				<input type="email" class="sign_up_input" placeholder="Email Address">
-				<button type="button" class="btn submit">SIGN UP</button>
+				<input type="email" class="sign_up_input" placeholder="Email Address" data-role="none">
+				<button type="button" class="btn submit" data-role="none">SIGN UP</button>
 			</div>
 		</form>
 		<section>
@@ -549,58 +170,194 @@
 			<p>All rights reserved.</p>
 		</div>
 	</footer>
-	<div class="aside">
-		<div class="menu" id="menu">
-			<ul class="menu_list">
-				<li>
-					<a href="##" class="menu_item">
-						<span class="menu_icon"><i class="fa fa-user-o"></i></span>
-						<span class="menu_title username">Jia Yan An</span>
-						<span class="menu_link"><i class="fa fa-chevron-up"></i></span>
-					</a>
-					<ul class="submenu">
-						<li><a href="##" class="submenu_item">My Order</a></li>
-						<li><a href="##" class="submenu_item">My Review</a></li>
-						<li><a href="##" class="submenu_item">Sign Out</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="##" class="menu_item">
-						<span class="menu_icon"><i class="fa fa-home"></i></span>
-						<span class="menu_title index">Home</span>
-						<span class="menu_link"><i class="fa fa-chevron-down"></i></span>
-					</a>
-				</li>
-				<li>
-					<a href="##" class="menu_item">
-						<span class="menu_icon"><i class="fa fa-th-large"></i></span>
-						<span class="menu_title username">All Categories</span>
-						<span class="menu_link"><i class="fa fa-chevron-up"></i></span>
-					</a>
-					<ul class="submenu">
-						<li><a href="##" class="submenu_item">Home</a></li>
-						<li><a href="##" class="submenu_item">Furniture</a></li>
-						<li><a href="##" class="submenu_item">Outdoor</a></li>
-						<li><a href="##" class="submenu_item">Hardware</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="##" class="menu_item">
-						<span class="menu_icon"><i class="fa fa-heart-o"></i></span>
-						<span class="menu_title">My Wishlist</span>
-						<span class="menu_link"><i class="fa fa-chevron-down"></i></span>
-					</a>
-				</li>
-				<li>
-					<a href="##" class="menu_item">
-						<span class="menu_icon"><i class="fa fa-phone-square"></i></span>
-						<span class="menu_title">Contact</span>
-						<span class="menu_link"><i class="fa fa-chevron-down"></i></span>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="overlay"></div>
+	<div class="aside" id="aside">
+		<ul class="menu_list">
+			<li>
+				<a href="##" class="menu_item">
+					<span class="menu_icon"><i class="fa fa-user-o"></i></span>
+					<span class="menu_title username">Jia Yan An</span>
+					<span class="menu_link"><i class="fa fa-chevron-up"></i></span>
+				</a>
+				<ul class="submenu">
+					<li><a href="##" class="submenu_item">My Order</a></li>
+					<li><a href="##" class="submenu_item">My Review</a></li>
+					<li><a href="##" class="submenu_item">Sign Out</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="##" class="menu_item">
+					<span class="menu_icon"><i class="fa fa-home"></i></span>
+					<span class="menu_title index">Home</span>
+					<span class="menu_link"><i class="fa fa-chevron-down"></i></span>
+				</a>
+			</li>
+			<li>
+				<a href="##" class="menu_item">
+					<span class="menu_icon"><i class="fa fa-th-large"></i></span>
+					<span class="menu_title username">All Categories</span>
+					<span class="menu_link"><i class="fa fa-chevron-up"></i></span>
+				</a>
+				<ul class="submenu">
+					<li><a href="##" class="submenu_item">Home</a></li>
+					<li><a href="##" class="submenu_item">Furniture</a></li>
+					<li><a href="##" class="submenu_item">Outdoor</a></li>
+					<li><a href="##" class="submenu_item">Hardware</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="##" class="menu_item">
+					<span class="menu_icon"><i class="fa fa-heart-o"></i></span>
+					<span class="menu_title">My Wishlist</span>
+					<span class="menu_link"><i class="fa fa-chevron-down"></i></span>
+				</a>
+			</li>
+			<li>
+				<a href="##" class="menu_item">
+					<span class="menu_icon"><i class="fa fa-phone-square"></i></span>
+					<span class="menu_title">Contact</span>
+					<span class="menu_link"><i class="fa fa-chevron-down"></i></span>
+				</a>
+			</li>
+		</ul>
 	</div>
+	<div class="overlay"></div>
 </body>
+
+<script>
+	$(function(){
+		$("#nav_menu").on('tap', function(){
+			$("#aside").css('left', '0');
+			$(".overlay").css('display', 'block');
+		})
+		$(".overlay").on('tap', function() {
+			$(this).css('display', 'none');
+			$("#aside").css('left', '-5.8rem');
+		});
+		$("#aside").on('swipeleft', function() {
+			$(this).css('left', '-5.8rem');
+			$(".overlay").css('display', 'none');
+		});
+
+		$(".menu_item").each(function() {
+			$(this).on('tap', function() {
+				var icon = $(this).find('.menu_link .fa');
+				if($(this).next(".submenu").length > 0){
+					$(this).next(".submenu").slideToggle(300);
+					$(icon).toggleClass('turn_down');
+				}
+			});
+		});
+	})
+</script>
+
+
+
+<!-- <script>
+	/*
+	 * params
+	 * slider	
+	 */
+	function Slider(){
+		this.slider = document.querySelector('.slider');
+		this.itemList = this.slider.getElementsByClassName('slider_item');
+		this.dotList = this.slider.getElementsByClassName('slider_dot');
+		this.index = 0;
+		this.length = (this.itemList.length === this.dotList.length) ? this.itemList.length : undefined;
+		this.rollWidth = this.slider.offsetWidth;
+	}
+
+	Slider.prototype.init = function(){
+		var _slider = this.slider;
+	}
+
+	Slider.prototype.bindEvent = function(){
+		var _this = this;
+		var _slider = this.slider;
+		var _itemList = this.itemList;
+		var length = this.length;
+		if(length === undefined){
+			return false;
+		}
+		_slider.addEventListener('touchstart', function(e){
+
+			_this.startX = e.touches[0].pageX;
+			_this.startTime = new Date() - 0;
+			_this.offsetX = 0;
+
+			_this.leftIndex = (_this.index - 1 < 0) ? (length - 1) : (_this.index - 1);
+			_this.rightIndex = (_this.index + 1 > (length - 1)) ? 0 : (_this.index + 1);
+
+			for (var i = 0; i < length; i++) {
+				_itemList[i].style.transition = 'transform 0s';
+			}
+		});
+		_slider.addEventListener('touchmove', function(e){
+			e.preventDefault();
+			_this.offsetX = e.touches[0].pageX - _this.startX;
+
+			_itemList[_this.index].style.transform = 'translate3d(' + _this.offsetX + 'px, 0, 0)';
+			_itemList[_this.rightIndex].style.transform = 'translate3d(' + (_this.offsetX + _this.rollWidth) + 'px, 0, 0)';
+			_itemList[_this.leftIndex].style.transform = 'translate3d(' + (_this.offsetX - _this.rollWidth) + 'px, 0, 0)';
+
+		});
+		_slider.addEventListener('touchend', function(e){
+			var endTime = new Date() - 0;
+
+				_itemList[_this.index].style.transition = 'transform 0.6s';
+				_itemList[_this.leftIndex].style.transition = 'transform 0.6s';
+				_itemList[_this.rightIndex].style.transition = 'transform 0.6s';
+
+			if(_this.offsetX > _this.rollWidth/3) {
+				_itemList[_this.index].style.transform = 'translate3d(' + _this.rollWidth + 'px, 0, 0)';
+				_itemList[_this.leftIndex].style.transform = 'translate3d(0, 0, 0)';
+
+				_this.index--;
+			}
+			else if(_this.offsetX < - _this.rollWidth/3){
+				_itemList[_this.index].style.transform = 'translate3d(' + (-_this.rollWidth) + 'px, 0, 0)';
+				_itemList[_this.rightIndex].style.transform = 'translate3d(0, 0, 0)';
+
+				_this.index++;
+			}
+			else {
+				_itemList[_this.leftIndex].style.transform = 'translate3d(' + (-_this.rollWidth) + 'px, 0, 0)';
+				_itemList[_this.index].style.transform = 'translate3d(0, 0, 0)';
+				_itemList[_this.rightIndex].style.transform = 'translate3d(' + _this.rollWidth + 'px, 0, 0)';
+			}
+
+			if(_this.index>(length-1)){
+				_this.index = 0;
+			}
+			else if(_this.index<0){
+				_this.index = length - 1;
+			}
+
+		});
+	}
+
+	var mySlider = new Slider();
+	window.slider = mySlider;
+</script> -->
+
+<script>
+var elem = document.getElementsByClassName('slider')[0];
+	window.mySwipe = Swipe(elem, {
+	  // startSlide: 4,
+	  auto: 3000,
+	  // continuous: true,
+	  // disableScroll: true,
+	  // stopPropagation: true,
+	  callback: function(index, element) {
+	  	/*德权修改*/
+	  	$(".slider_dot").removeClass('on');
+	  	$(".slider_dot").eq(index).addClass('on');
+	  	/*德权修改*/
+	  },
+	  // transitionEnd: function(index, element) {}
+	});
+
+	$(".slider_dot").on('tap', function() {
+		mySwipe.slide($(this).index(), 300);
+	});
+</script>
 </html>
