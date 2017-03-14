@@ -378,3 +378,20 @@ footer {
 .submenu li:last-child .submenu_item {
 	margin-bottom: 0;
 }
+
+
+
+.scrollTop {
+	position: fixed;
+	right: 0.4rem;
+	bottom: 0.5rem;
+	width: 0.56rem;
+	height: 0.56rem;
+	border-radius: 50%;
+	border: 0.04rem solid #7b7b7b;
+	background-color: #f5f5f5;
+	font-size: 0.32rem;
+	text-align: center;
+	z-index: 100;
+	display: none;
+}

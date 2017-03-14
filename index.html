@@ -33,11 +33,11 @@
 		</form>
 		<div class="slider">
 			<ul>
-				<li class="slider_item" style="transform: translate3d(0, 0, 0)"><a href="##"><img src="images/banner01.jpg" alt=""></a></li>
-				<li class="slider_item" style="transform: translate3d(7.5rem, 0, 0)"><a href="##"><img src="images/banner02.jpg" alt=""></a></li>
-				<li class="slider_item" style="transform: translate3d(15rem, 0, 0)"><a href="##"><img src="images/banner03.jpg" alt=""></a></li>
-				<li class="slider_item" style="transform: translate3d(22.5rem, 0, 0)"><a href="##"><img src="images/banner04.jpg" alt=""></a></li>
-				<li class="slider_item" style="transform: translate3d(30rem, 0, 0)"><a href="##"><img src="images/banner05.jpg" alt=""></a></li>
+				<li class="slider_item"><a href="##"><img src="images/banner01.jpg" alt=""></a></li>
+				<li class="slider_item"><a href="##"><img src="images/banner02.jpg" alt=""></a></li>
+				<li class="slider_item"><a href="##"><img src="images/banner03.jpg" alt=""></a></li>
+				<li class="slider_item"><a href="##"><img src="images/banner04.jpg" alt=""></a></li>
+				<li class="slider_item"><a href="##"><img src="images/banner05.jpg" alt=""></a></li>
 			</ul>
 			<div class="slider_controller">
 				<span class="slider_dot on"></span>
@@ -221,6 +221,9 @@
 		</ul>
 	</div>
 	<div class="overlay"></div>
+	<div class="scrollTop">
+		<i class="fa fa-chevron-up"></i>
+	</div>
 </body>
 
 <script>
@@ -247,9 +250,23 @@
 				}
 			});
 		});
+
+		var body = $(document.body);
+		var scrollBtn = $(".scrollTop");
+
+		$(window).on('scroll', function(event) {
+			if(body.scrollTop() > 200){
+				$(scrollBtn).fadeIn();
+			}
+			else {
+				$(scrollBtn).fadeOut();
+			}
+		});
+		$(scrollBtn).on('tap', function(event) {
+			$(body).animate({scrollTop: 0}, 600);
+		});
 	})
 </script>
-
 
 
 <!-- <script>

@@ -422,8 +422,8 @@ function Swipe(container, options) {
     transitionEnd: function(event) {
 
       if (parseInt(event.target.getAttribute('data-index'), 10) == index) {
-
-        if (delay) begin();
+        /*重新获取delay的值，否则执行stop函数后delay没有再设置回来，一直都为0*/
+        if(delay = options.auto || 0) begin();
 
         options.transitionEnd && options.transitionEnd.call(event, index, slides[index]);
 
@@ -484,7 +484,6 @@ function Swipe(container, options) {
       stop();
 
       prev();
-
     },
     next: function() {
 
@@ -492,7 +491,6 @@ function Swipe(container, options) {
       stop();
 
       next();
-
     },
     stop: function() {
 
