@@ -5,8 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <meta name="description" content="麦邻租房好帮手，一站式贴心服务给您优质生活" />
-  <link rel="shortcut icon" href="C:\Users\Administrator\Desktop\room-detail\src\favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   <title>麦邻生活</title>
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=rtg1a3V6x83iiFGHSrTWukgyKrNP10T8&s=1">
+  </script>
   <script>
 	  document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
   </script>
@@ -14,7 +16,70 @@
 
 <body>
   <div id="mj-container"></div>
-<script type="text/javascript" src="js/manifest.js?71f5f46b965776347758"></script><script type="text/javascript" src="js/vendor.js?ed333df3dd7ccd96e6c1"></script><script type="text/javascript" src="js/index.js?4ed8678f47690019c5ef"></script></body>
-  <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=rtg1a3V6x83iiFGHSrTWukgyKrNP10T8&s=1">
+<script type="text/javascript" src="js/manifest.js?0ccaf0aebc17cff36e48"></script><script type="text/javascript" src="js/vendor.js?ed333df3dd7ccd96e6c1"></script><script type="text/javascript" src="js/index.js?92517798e779acb93f36"></script></body>
+  <script type="text/javascript" src="js/zepto.js"></script>
+  <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script type="text/javascript">
+    var shareData = {
+        title: '帮助中心',
+        share_img: 'https://www.mdguanjia.com/waptest/houseInfo/images/apple-touch-icon.png',
+        share_desc:'麦滴管家帮助中心'
+    }
+
+    var success = function(d){
+        if(d.success == 1){
+          var response = d.dataObject;
+            wx.config({
+                debug: false,
+                appId: response.appid,
+                timestamp: response.timestamp,
+                nonceStr: response.noncestr,
+                signature: response.signature,
+                jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+        }
+        wx.ready(function(){
+            var share_url = location.href;
+            wx.onMenuShareTimeline({
+                title: shareData.title, // 分享标题
+                link: share_url, // 分享链接
+                imgUrl: shareData.share_img, // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+            wx.onMenuShareAppMessage({
+                title: shareData.title, // 分享标题
+                desc: shareData.share_desc, // 分享描述
+                link: share_url, // 分享链接
+                imgUrl: shareData.share_img, // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+
+        });
+        wx.error(function(res){
+            console.debug(res)
+        });
+    }
+
+    $.ajax({
+        type: "GET",
+        dataType: "jsonp",
+        jsonp: "callback",
+        data: {
+            url: window.location.href
+        },
+        url: "https://www.mdguanjia.com/myhome/act/august/wechat.htm",
+        success: success
+    });
   </script>
 </html>
