@@ -30,11 +30,15 @@ $(document).ready(function() {
 
 	$(document).on('click', '.getCoupon-btn', function() {
 		if(clientType == 'ios'){
-			setupWebViewJavascriptBridge(function(bridge) {
-			    bridge.callHandler('callAppLogin', {}, function responseCallback(responseData) {
-			    	console.log('调用成功');
-			    })
-			})
+			if(sessionId){
+				getCouponCode();
+			} else {
+				setupWebViewJavascriptBridge(function(bridge) {
+				    bridge.callHandler('loginAction', {}, function responseCallback(responseData) {
+				    	alert(responseData);
+				    })
+				})
+			}
 		} else if (clientType == 'android'){
 			if(sessionId){
 				getCouponCode();
