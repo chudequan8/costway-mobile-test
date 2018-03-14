@@ -30,13 +30,17 @@ $(document).ready(function() {
 
 	$(document).on('click', '.getCoupon-btn', function() {
 		if(clientType == 'ios'){
-			// setupWebViewJavascriptBridge(function(bridge) {
-			//     bridge.callHandler('callAppLogin', {}, function responseCallback(responseData) {
-			//     	console.log('调用成功');
-			//     })
-			// })
+			setupWebViewJavascriptBridge(function(bridge) {
+			    bridge.callHandler('callAppLogin', {}, function responseCallback(responseData) {
+			    	console.log('调用成功');
+			    })
+			})
 		} else if (clientType == 'android'){
-			MLActivityLogin.callAppLogin();
+			if(sessionId){
+				getCouponCode();
+			} else {
+				MLActivityLogin.callAppLogin();
+			}
 		} else {
 			if(sessionId){
 				getCouponCode();
@@ -46,6 +50,14 @@ $(document).ready(function() {
 		}
 		// getCouponCode();
 	})
+
+	function changeUrl(string) {
+		alert('回调成功');
+		alert(string);
+	}
+
+
+
 	$(document).on('click', '.code-btn', function() {
 		getCheckCode();
 	})
@@ -53,9 +65,9 @@ $(document).ready(function() {
 	$(document).on('click', '.toUse', function() {
 		if(clientType == 'ios'){
 			setupWebViewJavascriptBridge(function(bridge) {
-			    bridge.callHandler('callAppCheckCoupon', {}, function responseCallback(responseData) {
-						console.log('调用成功');
-			    })
+		    bridge.callHandler('callAppCheckCoupon', {}, function responseCallback(responseData) {
+					console.log('调用成功');
+		    })
 			})
 		} else if (clientType == 'android'){
 			MLActivityCoupon.callAppCheckCoupon();
