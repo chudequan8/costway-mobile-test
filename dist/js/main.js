@@ -29,30 +29,30 @@ $(document).ready(function() {
 	initPage();
 
   $(document).on('click', '.getCoupon-btn', function() {
-  	if(clientType == 'ios'){
-  		if(sessionId){
-  			getCouponCode();
-  		} else {
-  			setupWebViewJavascriptBridge(function(bridge) {
-			    bridge.callHandler('loginAction', {}, function responseCallback(responseData) {
-			    	sessionId = responseData.sessionId;
-			    })
-			  })
-  		}
-  	} else if (clientType == 'android'){
-  		if(sessionId){
-  			getCouponCode();
-  		} else {
-  			MLActivityLogin.callAppLogin();
-  		}
-  	} else {
-  		if(sessionId){
-  			getCouponCode();
-  		} else {
-  			login();
-  		}
-  	}
-  	// getCouponCode();
+  	// if(clientType == 'ios'){
+  	// 	if(sessionId){
+  	// 		getCouponCode();
+  	// 	} else {
+  	// 		setupWebViewJavascriptBridge(function(bridge) {
+			//     bridge.callHandler('loginAction', {}, function responseCallback(responseData) {
+			//     	sessionId = responseData.sessionId;
+			//     })
+			//   })
+  	// 	}
+  	// } else if (clientType == 'android'){
+  	// 	if(sessionId){
+  	// 		getCouponCode();
+  	// 	} else {
+  	// 		MLActivityLogin.callAppLogin();
+  	// 	}
+  	// } else {
+  	// 	if(sessionId){
+  	// 		getCouponCode();
+  	// 	} else {
+  	// 		login();
+  	// 	}
+  	// }
+  	getCouponCode();
   })
   $(document).on('click', '.toUse', function() {
   	if(clientType == 'ios'){
