@@ -34,7 +34,7 @@ $(document).ready(function() {
     		if(sessionId){
     			getCouponCode();
     		} else {
-  		    bridge.callHandler('loginAction', {}, function responseCallback(responseData) {
+  		    bridge.callHandler('callAppCheckCoupon', {}, function responseCallback(responseData) {
   		    	alert(responseData);
   		    	sessionId = responseData.sessionId;
   		    })
@@ -55,9 +55,6 @@ $(document).ready(function() {
     	// getCouponCode();
     })
     $(document).on('click', '.toUse', function() {
-	    bridge.callHandler('callAppCheckCoupon', {}, function responseCallback(responseData) {
-				alert('调用成功');
-	    })
     	if(clientType == 'ios'){
   	    bridge.callHandler('callAppCheckCoupon', {}, function responseCallback(responseData) {
   				alert('调用成功');
