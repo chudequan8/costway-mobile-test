@@ -297,3 +297,10 @@ $(document).ready(function() {
 	    setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
 	}
 })
+
+
+
+function changeUrl(string) {
+	alert('回调成功');
+	alert(string);
+}
