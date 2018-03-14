@@ -35,10 +35,7 @@ html, body {
 body {
   /* font-size: 0.32rem; */
   font-size: 0.373333rem;
-  background-image: url('../images/main-bg.png');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center top;
+  background-color: #ffd214;
 }
 input::-webkit-input-placeholder {
   color: #FF8400;
@@ -73,7 +70,10 @@ input::-webkit-input-placeholder {
   position: relative;
   padding-top: 12.4rem;
   height: 100%;
-
+  background-image: url('../images/main-bg.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center top;
 }
 .getCoupon-btn {
   width: 100%;
