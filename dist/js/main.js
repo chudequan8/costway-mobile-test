@@ -60,6 +60,7 @@ $(document).ready(function() {
 		} else if (clientType == 'android'){
 			MLActivityCoupon.callAppCheckCoupon();
 		} else {
+			var searchUrl = location.search;  
 			var config = {
 			    scheme_IOS:'MyRoom://activity',
 			    scheme_And:'myroom://'
@@ -68,9 +69,9 @@ $(document).ready(function() {
 			if(navigator.userAgent.toLowerCase().indexOf('micromessenger') > -1){
 	    	location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.memorhome.home';
 			}else if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-		    window.location.href = config.scheme_IOS;
+		    window.location.href = config.scheme_IOS + searchUrl;
 			} else if (/(Android)/i.test(navigator.userAgent)) {
-		    window.location.href = config.scheme_And;
+		    window.location.href = config.scheme_And + searchUrl;
 			}
 		}
 	})
