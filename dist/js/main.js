@@ -34,7 +34,7 @@ $(document).ready(function() {
     		if(sessionId){
     			getCouponCode();
     		} else {
-  		    bridge.callHandler('callAppCheckCoupon', {}, function responseCallback(responseData) {
+  		    bridge.callHandler('loginAction', {}, function responseCallback(responseData) {
   		    	alert(responseData);
   		    	sessionId = responseData.sessionId;
   		    })
