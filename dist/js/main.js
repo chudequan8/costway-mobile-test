@@ -68,9 +68,9 @@ $(document).ready(function() {
 			if(navigator.userAgent.toLowerCase().indexOf('micromessenger') > -1){
 	    	location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.memorhome.home';
 			}else if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-		    location.href = config.scheme_IOS + searchUrl;
+		    location.href = config.scheme_IOS;
 			} else if (/(Android)/i.test(navigator.userAgent)) {
-		    location.href = config.scheme_And + searchUrl;
+		    location.href = config.scheme_And;
 			}
 		}
 	})
