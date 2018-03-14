@@ -20,8 +20,8 @@ $(document).ready(function() {
 	  	var region = searchObj.clientType.toLowerCase();
 	  	if(region == 'ios'){
 	  		clientType = 'ios';
-	  	} else if(region == 'andriod'){
-	  		clientType = 'andriod';
+	  	} else if(region == 'android'){
+	  		clientType = 'android';
 	  	}
 	  }
 	}
@@ -35,7 +35,7 @@ $(document).ready(function() {
 			    	console.log('调用成功');
 			    })
 			})
-		} else if (clientType == 'andriod'){
+		} else if (clientType == 'android'){
 			MLActivityLogin.callAppLogin();
 		} else {
 			if(sessionId){
@@ -57,7 +57,7 @@ $(document).ready(function() {
 						console.log('调用成功');
 			    })
 			})
-		} else if (clientType == 'andriod'){
+		} else if (clientType == 'android'){
 			MLActivityCoupon.callAppCheckCoupon();
 		} else {
 			var config = {
@@ -75,8 +75,28 @@ $(document).ready(function() {
 		}
 	})
 
+	/* 输入内容防止软键盘遮盖 */
+	$('.userForm-group').delegate('input','focus',function(){
+		if(/Android/.test(navigator.appVersion)) {
+		    window.addEventListener("resize", function() {		    	
+		        if(document.activeElement.tagName.toLowerCase() == "input") {
+		            window.setTimeout(function() {
+		                document.activeElement.scrollIntoViewIfNeeded();
+		            },0);
+		        }
+		    })
+		}else{
+			var self = $(this);
+			window.setTimeout(function() {
+				if(self.scrollIntoView){
+          self.scrollIntoView();
+				}
+      },100);
+		}
+	});
+
 	function initPage() {
-		if(clientType == 'ios' || clientType == 'andriod'){
+		if(clientType == 'ios' || clientType == 'android'){
 			$('.userForm-group').css('visibility', 'hidden');
 		} else {
 			if(sessionId){
@@ -160,7 +180,6 @@ $(document).ready(function() {
 			}
 		})
 	}
-
 	function testPhone() {
 		if($('.phone-input input').val() == ''){
 			layer.msg('请输入手机号');

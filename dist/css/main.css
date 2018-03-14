@@ -48,6 +48,8 @@ input::-webkit-input-placeholder {
 }
 #mj-container {
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 .btn {
   text-align: center;
@@ -70,6 +72,8 @@ input::-webkit-input-placeholder {
 .coupon-container {
   position: relative;
   padding-top: 12.4rem;
+  height: 100%;
+
 }
 .getCoupon-btn {
   width: 100%;
