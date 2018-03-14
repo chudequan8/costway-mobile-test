@@ -54,7 +54,7 @@ $(document).ready(function() {
   	// }
   	getCouponCode();
   })
-  $(document).on('click', '.toUse', function() {
+  $(document).on('click', '.code-btn', function() {
   	if(clientType == 'ios'){
   		setupWebViewJavascriptBridge(function(bridge) {
 		    bridge.callHandler('callAppCheckCoupon', {}, function responseCallback(responseData) {
@@ -83,9 +83,9 @@ $(document).ready(function() {
   	}
   })
 
-	$(document).on('click', '.code-btn', function() {
-		getCheckCode();
-	})
+	// $(document).on('click', '.code-btn', function() {
+	// 	getCheckCode();
+	// })
 
 	/* 输入内容防止软键盘遮盖 */
 	$('.userForm-group').delegate('input','focus',function(){
