@@ -36,6 +36,7 @@ $(document).ready(function() {
 				setupWebViewJavascriptBridge(function(bridge) {
 				    bridge.callHandler('loginAction', {}, function responseCallback(responseData) {
 				    	alert(responseData);
+				    	sessionId = responseData.sessionId;
 				    })
 				})
 			}
@@ -296,9 +297,6 @@ $(document).ready(function() {
 	}
 })
 
-
-
-function changeUrl(string) {
-	// alert(string);
-	MLActivityCoupon.callAppCheckCoupon();
+function getSessionId(string) {
+	sessionId = string;
 }
