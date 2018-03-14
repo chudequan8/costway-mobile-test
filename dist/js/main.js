@@ -54,7 +54,7 @@ $(document).ready(function() {
   	// }
   	getCouponCode();
   })
-  $(document).on('click', '.couponCode', function() {
+  $(document).on('click', '.to-use', function() {
   	if(clientType == 'ios'){
   		setupWebViewJavascriptBridge(function(bridge) {
 		    bridge.callHandler('callAppCheckCoupon', {}, function responseCallback(responseData) {
