@@ -28,32 +28,32 @@ $(document).ready(function() {
 
 	initPage();
 
-  // $(document).on('click', '.getCoupon-btn', function() {
-  // 	// if(clientType == 'ios'){
-  // 	// 	if(sessionId){
-  // 	// 		getCouponCode();
-  // 	// 	} else {
-  // 	// 		setupWebViewJavascriptBridge(function(bridge) {
-		// 	//     bridge.callHandler('loginAction', {}, function responseCallback(responseData) {
-		// 	//     	sessionId = responseData.sessionId;
-		// 	//     })
-		// 	//   })
-  // 	// 	}
-  // 	// } else if (clientType == 'android'){
-  // 	// 	if(sessionId){
-  // 	// 		getCouponCode();
-  // 	// 	} else {
-  // 	// 		MLActivityLogin.callAppLogin();
-  // 	// 	}
-  // 	// } else {
-  // 	// 	if(sessionId){
-  // 	// 		getCouponCode();
-  // 	// 	} else {
-  // 	// 		login();
-  // 	// 	}
-  // 	// }
-  // 	getCouponCode();
-  // })
+  $(document).on('click', '.getCoupon-btn', function() {
+  	// if(clientType == 'ios'){
+  	// 	if(sessionId){
+  	// 		getCouponCode();
+  	// 	} else {
+  	// 		setupWebViewJavascriptBridge(function(bridge) {
+			//     bridge.callHandler('loginAction', {}, function responseCallback(responseData) {
+			//     	sessionId = responseData.sessionId;
+			//     })
+			//   })
+  	// 	}
+  	// } else if (clientType == 'android'){
+  	// 	if(sessionId){
+  	// 		getCouponCode();
+  	// 	} else {
+  	// 		MLActivityLogin.callAppLogin();
+  	// 	}
+  	// } else {
+  	// 	if(sessionId){
+  	// 		getCouponCode();
+  	// 	} else {
+  	// 		login();
+  	// 	}
+  	// }
+  	getCouponCode();
+  })
   $(document).on('click', '.to-use', function() {
   	if(clientType == 'ios'){
   		setupWebViewJavascriptBridge(function(bridge) {
@@ -83,9 +83,9 @@ $(document).ready(function() {
   	}
   })
 
-	// $(document).on('click', '.code-btn', function() {
-	// 	getCheckCode();
-	// })
+	$(document).on('click', '.code-btn', function() {
+		getCheckCode();
+	})
 
 	/* 输入内容防止软键盘遮盖 */
 	$('.userForm-group').delegate('input','focus',function(){
