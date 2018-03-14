@@ -82,7 +82,6 @@ $(document).ready(function() {
   		}
   	}
   })
-
 	$('.coupon-container').on('click', '.code-btn', function() {
 		getCheckCode();
 	})
