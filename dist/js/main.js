@@ -29,30 +29,29 @@ $(document).ready(function() {
 	initPage();
 
   $('.coupon-container').on('click', '.getCoupon-btn', function() {
-  	// if(clientType == 'ios'){
-  	// 	if(sessionId){
-  	// 		getCouponCode();
-  	// 	} else {
-  	// 		setupWebViewJavascriptBridge(function(bridge) {
-			//     bridge.callHandler('loginAction', {}, function responseCallback(responseData) {
-			//     	sessionId = responseData.sessionId;
-			//     })
-			//   })
-  	// 	}
-  	// } else if (clientType == 'android'){
-  	// 	if(sessionId){
-  	// 		getCouponCode();
-  	// 	} else {
-  	// 		MLActivityLogin.callAppLogin();
-  	// 	}
-  	// } else {
-  	// 	if(sessionId){
-  	// 		getCouponCode();
-  	// 	} else {
-  	// 		login();
-  	// 	}
-  	// }
-  	getCouponCode();
+  	if(clientType == 'ios'){
+  		if(sessionId){
+  			getCouponCode();
+  		} else {
+  			setupWebViewJavascriptBridge(function(bridge) {
+			    bridge.callHandler('loginAction', {}, function responseCallback(responseData) {
+			    	window.location.href="./?sessionId=" + escape(responseData.sessionId) + '&clientType=' + responseData.clientType;
+			    })
+			  })
+  		}
+  	} else if (clientType == 'android'){
+  		if(sessionId){
+  			getCouponCode();
+  		} else {
+  			MLActivityLogin.callAppLogin();
+  		}
+  	} else {
+  		if(sessionId){
+  			getCouponCode();
+  		} else {
+  			login();
+  		}
+  	}
   })
   $('.coupon-container').on('click', '.to-use', function() {
   	if(clientType == 'ios'){
@@ -71,13 +70,10 @@ $(document).ready(function() {
   		};
   		// 非微信端唤醒APP
   		if(navigator.userAgent.toLowerCase().indexOf('micromessenger') > -1){
-  			alert(1);
       	location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.memorhome.home';
   		}else if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-  			alert(2);
   	    window.location.href = config.scheme_IOS + searchUrl;
   		} else if (/(Android)/i.test(navigator.userAgent)) {
-  			alert(3);
   	    window.location.href = config.scheme_And + searchUrl;
   		}
   	}
