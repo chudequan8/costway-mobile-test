@@ -181,11 +181,11 @@ input::-webkit-input-placeholder {
     .couponCode .content .range, .couponCode .content .validity-period {
       font-size: 0.266667rem;
       color: #999; }
-  .couponCode .toUse {
+  .couponCode .to-use {
     width: 1.04rem;
     color: #FF3200;
     text-align: center; }
-    .couponCode .toUse .toUse-text {
+    .couponCode .to-use .to-use-text {
       display: inline-block;
       width: 1em;
       line-height: 1.2;
