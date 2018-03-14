@@ -51,12 +51,6 @@ $(document).ready(function() {
 		// getCouponCode();
 	})
 
-	function changeUrl(string) {
-		alert('回调成功');
-		alert(string);
-	}
-
-
 
 	$(document).on('click', '.code-btn', function() {
 		getCheckCode();
@@ -301,6 +295,6 @@ $(document).ready(function() {
 
 
 function changeUrl(string) {
-	alert('回调成功');
-	alert(string);
+	// alert(string);
+	MLActivityCoupon.callAppCheckCoupon();
 }
