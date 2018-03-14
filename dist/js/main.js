@@ -30,11 +30,11 @@ $(document).ready(function() {
 
 	$(document).on('click', '.getCoupon-btn', function() {
 		if(clientType == 'ios'){
-			setupWebViewJavascriptBridge(function(bridge) {
-			    bridge.callHandler('callAppLogin', {}, function responseCallback(responseData) {
-			    	console.log('调用成功');
-			    })
-			})
+			// setupWebViewJavascriptBridge(function(bridge) {
+			//     bridge.callHandler('callAppLogin', {}, function responseCallback(responseData) {
+			//     	console.log('调用成功');
+			//     })
+			// })
 		} else if (clientType == 'android'){
 			MLActivityLogin.callAppLogin();
 		} else {
@@ -68,9 +68,9 @@ $(document).ready(function() {
 			if(navigator.userAgent.toLowerCase().indexOf('micromessenger') > -1){
 	    	location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.memorhome.home';
 			}else if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-		    location.href = config.scheme_IOS;
+		    window.location.href = config.scheme_IOS;
 			} else if (/(Android)/i.test(navigator.userAgent)) {
-		    location.href = config.scheme_And;
+		    window.location.href = config.scheme_And;
 			}
 		}
 	})
