@@ -28,60 +28,60 @@ $(document).ready(function() {
 
 	initPage();
 
-  $(document).on('click', '.getCoupon-btn', function() {
-  	// if(clientType == 'ios'){
-  	// 	if(sessionId){
-  	// 		getCouponCode();
-  	// 	} else {
-  	// 		setupWebViewJavascriptBridge(function(bridge) {
-			//     bridge.callHandler('loginAction', {}, function responseCallback(responseData) {
-			//     	sessionId = responseData.sessionId;
-			//     })
-			//   })
-  	// 	}
-  	// } else if (clientType == 'android'){
-  	// 	if(sessionId){
-  	// 		getCouponCode();
-  	// 	} else {
-  	// 		MLActivityLogin.callAppLogin();
-  	// 	}
-  	// } else {
-  	// 	if(sessionId){
-  	// 		getCouponCode();
-  	// 	} else {
-  	// 		login();
-  	// 	}
-  	// }
-  	getCouponCode();
-  })
-  $(document).on('click', '.code-btn', function() {
-  	if(clientType == 'ios'){
-  		setupWebViewJavascriptBridge(function(bridge) {
-		    bridge.callHandler('callAppCheckCoupon', {}, function responseCallback(responseData) {
-					alert('调用成功');
-		    })
-		  })
-  	} else if (clientType == 'android'){
-  		MLActivityCoupon.callAppCheckCoupon();
-  	} else {
-  		var searchUrl = location.search;  
-  		var config = {
-  		    scheme_IOS:'MyRoom://activity',
-  		    scheme_And:'myroom://'
-  		};
-  		// 非微信端唤醒APP
-  		if(navigator.userAgent.toLowerCase().indexOf('micromessenger') > -1){
-  			alert(1);
-      	location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.memorhome.home';
-  		}else if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-  			alert(2);
-  	    window.location.href = config.scheme_IOS + searchUrl;
-  		} else if (/(Android)/i.test(navigator.userAgent)) {
-  			alert(3);
-  	    window.location.href = config.scheme_And + searchUrl;
-  		}
-  	}
-  })
+  // $(document).on('click', '.getCoupon-btn', function() {
+  // 	// if(clientType == 'ios'){
+  // 	// 	if(sessionId){
+  // 	// 		getCouponCode();
+  // 	// 	} else {
+  // 	// 		setupWebViewJavascriptBridge(function(bridge) {
+		// 	//     bridge.callHandler('loginAction', {}, function responseCallback(responseData) {
+		// 	//     	sessionId = responseData.sessionId;
+		// 	//     })
+		// 	//   })
+  // 	// 	}
+  // 	// } else if (clientType == 'android'){
+  // 	// 	if(sessionId){
+  // 	// 		getCouponCode();
+  // 	// 	} else {
+  // 	// 		MLActivityLogin.callAppLogin();
+  // 	// 	}
+  // 	// } else {
+  // 	// 	if(sessionId){
+  // 	// 		getCouponCode();
+  // 	// 	} else {
+  // 	// 		login();
+  // 	// 	}
+  // 	// }
+  // 	getCouponCode();
+  // })
+  // $(document).on('click', '.code-btn', function() {
+  // 	if(clientType == 'ios'){
+  // 		setupWebViewJavascriptBridge(function(bridge) {
+		//     bridge.callHandler('callAppCheckCoupon', {}, function responseCallback(responseData) {
+		// 			alert('调用成功');
+		//     })
+		//   })
+  // 	} else if (clientType == 'android'){
+  // 		MLActivityCoupon.callAppCheckCoupon();
+  // 	} else {
+  // 		var searchUrl = location.search;  
+  // 		var config = {
+  // 		    scheme_IOS:'MyRoom://activity',
+  // 		    scheme_And:'myroom://'
+  // 		};
+  // 		// 非微信端唤醒APP
+  // 		if(navigator.userAgent.toLowerCase().indexOf('micromessenger') > -1){
+  // 			alert(1);
+  //     	location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.memorhome.home';
+  // 		}else if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+  // 			alert(2);
+  // 	    window.location.href = config.scheme_IOS + searchUrl;
+  // 		} else if (/(Android)/i.test(navigator.userAgent)) {
+  // 			alert(3);
+  // 	    window.location.href = config.scheme_And + searchUrl;
+  // 		}
+  // 	}
+  // })
 
 	$(document).on('click', '.to-use', function() {
 		getCheckCode();
