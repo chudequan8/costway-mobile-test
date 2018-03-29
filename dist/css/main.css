@@ -35,7 +35,7 @@ html, body {
 body {
   /* font-size: 0.32rem; */
   font-size: 0.373333rem;
-  background-color: #ffd214;
+  background-color: #555;
 }
 input::-webkit-input-placeholder {
   color: #FF8400;
