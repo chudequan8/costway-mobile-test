@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>毕业租房季</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <script>
+        document.documentElement.style.fontSize = Math.min(document.documentElement.clientWidth / 10, 75) + 'px';
+        window.onresize = function () {
+            document.documentElement.style.fontSize = Math.min(document.documentElement.clientWidth / 10, 75) + 'px';
+        }
+    </script>
+    <script>
+        function refreshPage() {
+            window.location.reload();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="mj-container">
+        <div class="coupon-container">
+            <a href="./activity-rule.html" class="activity-rule text">
+                <p>活动</p>
+                <p>规则</p>
+            </a>
+            <div class="getCoupon-group hide">
+                <div class="userForm-group">
+                    <div>
+                        <div class="phone-input">
+                            <input placeholder="请输入您的手机号" type="tel" maxlength="11">
+                        </div>
+                        <div class="code-input">
+                            <input placeholder="请输入手机验证码" pattern="[0-9]*" oninput="value = value.length > 6 ? value.slice(0, 6) : value">
+                            <button class="btn btn-primary code-btn" type="primary">发送验证码</button>
+                        </div>
+                    </div>
+                    <p class="remind">未注册麦邻生活账号的手机号，登录时将自动注册，
+                        <br> 且代表您已同意
+                        <a href="./agreement.html" class="agreement-btn">《用户服务协议》</a>
+                    </p>
+                </div>
+                <button class="btn btn-primary getCoupon-btn" type="button"></button>
+            </div>
+            <div class="showCoupon-container hide">
+                <!-- <div class="couponCode-container hide">
+                    <div class="couponCode">
+                        <div class="count">
+                            <span class="count-text">50</span>
+                            <span>元</span>
+                        </div>
+                        <div class="content">
+                            <div class="name-container">
+                                <span class="tag">抵扣券</span>
+                                <span class="name">毕业租房季抵扣券</span>
+                            </div>
+                            <div class="name-container">
+                                <p class="validity-period">2018/5/15-2018/5/25</p>
+                                <span class="to-use-text">去查看</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="more-info">
+                        <span class="showPhone"></span>
+                    </p>
+                    <p class="more-info">搬家券等更多权益，请下载并登陆麦邻生活APP领取</p>
+                </div>
+                <div class="outDate">
+                    <img src="./images/end.png" alt="">
+                    <p>来晚了，活动已结束！</p>
+                </div> -->
+            </div>
+            <div class="recommend-container hide">
+                <div class="recommend-room">
+                </div>
+                <div class="download-container">
+                    <p class="download-link">更多房源，请下载麦邻生活APP<span class="download-icon">>></span></p>
+                </div>
+                <div class="compare">
+                    <span>联合活动方：</span>
+                    <div class="">
+                        <img src="./images/xianyu.png" alt="">
+                    </div>
+                    <div>
+                        <img src="./images/lanxiniu.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="test-code"></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/layer_mobile/layer.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<!-- 百度统计 -->
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b57d1db4f35bed1a6b460ab0328a6b23";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!-- 微信分享 -->
+<script>
+    $.ajax({
+        type: 'get',
+        url: 'https://www.mdguanjia.com/myhome/act/august/wechat.htm',
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        data: {
+            url: window.location.href,
+            callback: 'h5'
+        },
+        success: function (res) {
+            var shareData = {
+                title: 'High爆了，麦邻毕业季，送50元租房抵扣券+送100元搬家券！',
+                share_img: 'https://www.mdguanjia.com/activities/youth-plan/images/thumbnail.jpg',
+                share_desc: '麦邻生活毕业季，协助大学生租房优惠福利火热来袭，轻松开启大学毕业之旅'
+            }
+            if (res.success) {
+                var response = res.dataObject;
+                wx.config({
+                    debug: false,
+                    appId: response.appid,
+                    timestamp: response.timestamp,
+                    nonceStr: response.noncestr,
+                    signature: response.signature,
+                    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                });
+            }
+            wx.ready(function () {
+                var share_url = location.href;
+                wx.onMenuShareTimeline({
+                    title: shareData.title, // 分享标题
+                    link: share_url, // 分享链接
+                    imgUrl: shareData.share_img, // 分享图标
+                    success: function () {
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+                wx.onMenuShareAppMessage({
+                    title: shareData.title, // 分享标题
+                    desc: shareData.share_desc, // 分享描述
+                    link: share_url, // 分享链接
+                    imgUrl: shareData.share_img, // 分享图标
+                    type: '', // 分享类型,music、video或link，不填默认为link
+                    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                    success: function () {
+                        
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+            });
+            wx.error(function (res) {
+                console.debug(res)
+            });
+        },
+        error: function (data) {
+            layer.open({
+                content: '网络连接失败，请重试'
+                , skin: 'msg'
+                , time: 2 //2秒后自动关闭
+            });
+        }
+    })
+</script>
+
+</html>
