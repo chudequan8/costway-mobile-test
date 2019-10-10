@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="326px" viewBox="0 0 375 326" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>banner6@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="134.48204%" y1="59.1544134%" x2="7.38113161%" y2="78.7124109%" id="linearGradient-1">
+            <stop stop-color="#25234B" offset="0%"></stop>
+            <stop stop-color="#303856" offset="100%"></stop>
+        </linearGradient>
+        <path d="M0,0 L375,0 L375,283.177966 C311.782443,311.725989 249.037996,326 186.76666,326 C124.495325,326 62.2397714,311.725989 6.66133815e-13,283.177966 L0,0 Z" id="path-2"></path>
+        <linearGradient x1="50%" y1="94.0763728%" x2="50%" y2="5.14986548%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="94.0763728%" x2="50%" y2="5.14986548%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="94.0763728%" x2="50%" y2="5.14986548%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="94.0763728%" x2="50%" y2="5.14986548%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" stop-opacity="0.761281687" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="94.0763728%" x2="50%" y2="5.14986548%" id="linearGradient-8">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="94.0763728%" x2="50%" y2="5.14986548%" id="linearGradient-9">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-10">
+            <stop stop-color="#FFFFFF" stop-opacity="0.60393903" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-11">
+            <stop stop-color="#7982A8" offset="0%"></stop>
+            <stop stop-color="#434B6F" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-12">
+            <stop stop-color="#7982A8" stop-opacity="0.605905813" offset="0%"></stop>
+            <stop stop-color="#434B6F" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="黑名单检测" transform="translate(-0.000000, -64.000000)">
+            <g id="banner6" transform="translate(0.000000, 64.000000)">
+                <g id="分组-13-+-分组-13-copy-+-分组-13-copy-2-Mask">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                    <g id="分组-13" opacity="0.165741263" mask="url(#mask-3)">
+                        <g transform="translate(6.000000, 107.819805)">
+                            <polygon id="矩形" fill="url(#linearGradient-4)" opacity="0.464053199" transform="translate(32.000000, 32.000000) rotate(-315.000000) translate(-32.000000, -32.000000) " points="28.4750564 24.8631216 55 10 36.3716852 40.0111796 9 54"></polygon>
+                            <polygon id="矩形" fill="url(#linearGradient-5)" opacity="0.368652344" points="1.18029856e-14 31 29.4264888 40.7560077 29.4264888 116.830633 1.18029856e-14 107.074625"></polygon>
+                            <polygon id="矩形-copy-11" fill="url(#linearGradient-6)" opacity="0.619721912" points="29.4264888 40.7560077 63.8198052 32.7071068 63.8198052 109.044422 29.4264888 117.093323"></polygon>
+                        </g>
+                    </g>
+                    <g id="分组-13-copy" opacity="0.200000003" mask="url(#mask-3)">
+                        <g transform="translate(-16.000000, 94.000000)">
+                            <polygon id="矩形" fill="url(#linearGradient-7)" opacity="0.856329055" transform="translate(18.000000, 80.898305) rotate(-315.000000) translate(-18.000000, -80.898305) " points="16.0341607 76.9007525 30.935911 68.5217161 20.4393968 85.3849175 5.06408898 93.2748941"></polygon>
+                            <polygon id="矩形" fill="url(#linearGradient-8)" opacity="0.337286086" points="0.101359601 0.502804682 16.5524 5.79573312 16.5524 48.3397746 0.101359601 43.0468462"></polygon>
+                            <polygon id="矩形-copy-11" fill="url(#linearGradient-9)" opacity="0.664643787" points="16.5524 85.7957331 35.8986404 81.2938055 35.8986404 123.810866 16.5524 128.312793"></polygon>
+                        </g>
+                    </g>
+                    <g id="分组-13" opacity="0.165741263" mask="url(#mask-3)">
+                        <g transform="translate(346.000000, 197.819805)" id="矩形">
+                            <polygon fill="url(#linearGradient-4)" opacity="0.464053199" transform="translate(32.000000, 32.000000) rotate(-315.000000) translate(-32.000000, -32.000000) " points="28.4750564 24.8631216 55 10 36.3716852 40.0111796 9 54"></polygon>
+                            <polygon fill="url(#linearGradient-5)" opacity="0.368652344" points="1.18029856e-14 31 29.4264888 40.7560077 29.4264888 116.830633 1.18029856e-14 107.074625"></polygon>
+                        </g>
+                    </g>
+                    <g id="分组-13-copy" opacity="0.200000003" mask="url(#mask-3)">
+                        <g transform="translate(324.000000, 184.000000)">
+                            <polygon id="矩形" fill="url(#linearGradient-7)" opacity="0.856329055" transform="translate(18.000000, 80.898305) rotate(-315.000000) translate(-18.000000, -80.898305) " points="16.0341607 76.9007525 30.935911 68.5217161 20.4393968 85.3849175 5.06408898 93.2748941"></polygon>
+                            <polygon id="矩形" fill="url(#linearGradient-8)" opacity="0.337286086" points="0.101359601 0.502804682 16.5524 5.79573312 16.5524 48.3397746 0.101359601 43.0468462"></polygon>
+                            <polygon id="矩形-copy-11" fill="url(#linearGradient-9)" opacity="0.664643787" points="16.5524 85.7957331 35.8986404 81.2938055 35.8986404 123.810866 16.5524 128.312793"></polygon>
+                        </g>
+                    </g>
+                    <polygon id="矩形-copy-12" fill="url(#linearGradient-10)" mask="url(#mask-3)" transform="translate(13.766660, 231.433013) scale(1, -1) rotate(30.000000) translate(-13.766660, -231.433013) " points="-12.2333395 231.333013 39.7666605 230.933013 39.7666605 231.933013 -12.2333395 231.533013"></polygon>
+                </g>
+                <g id="yq1" transform="translate(90.000000, 15.000000)">
+                    <circle id="椭圆形" stroke="url(#linearGradient-11)" opacity="0.410016741" cx="98" cy="98" r="73"></circle>
+                    <circle id="椭圆形" stroke="url(#linearGradient-12)" opacity="0.410016741" cx="98" cy="98" r="98"></circle>
+                    <circle id="椭圆形" stroke="url(#linearGradient-11)" cx="98" cy="98" r="48"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
